@@ -15,16 +15,14 @@ public class EEA {
     int a = sc.nextInt();
     int b = sc.nextInt();
     sc.close();
-
-    // EAA(a, b);
+    
     EAA_small(a, b);
     // EAA_table(a, b);
   }
 
-  public static void EAA(int a, int b) {
-    
-  }
-
+  /*
+  * https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm#Pseudocode
+  */
   public static void EAA_small(int a, int b) {
     int s = 0;
     int t = 1;
@@ -61,6 +59,9 @@ public class EEA {
     }
   }
 
+  /*
+  * https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm#Example
+  */
   public static void EAA_table(int a, int b) {
     ArrayList<int[]> EEA = new ArrayList<int[]>();
     EEA.add(0, new int[] { 0, a, 1, 0 });
