@@ -3,16 +3,12 @@ import java.util.Scanner;
 
 /*
 * Inverse Modulo / Modular Multiplicative Inverse
-* a * x ≡ 1 (mod b), given a and b find x
-* ax + by = gcd(a,b)
 * An Inverse modulo can be found using the Extended Euclidian Algorithm (EEA).
 */
 
 public class InverseModulo {
   
   static ArrayList<int[]> lines = new ArrayList<>();
-  static ArrayList<Integer> r = new ArrayList<>();
-  static ArrayList<Integer> q = new ArrayList<>();
 
   public static void main(String[] args) {
     System.out.println("Enter two integers seperated by a space");
@@ -25,13 +21,16 @@ public class InverseModulo {
     EAA(a, b);
   }
 
+  /*
+  * Extended Euclidian Algorithm with steps
+  */
   public static void EAA(int x, int y) {
     int gcd = EA(x, y);
 
-    System.out.println("Finding inverse modulo b = " + x + "^-1 mod " + y);
+    System.out.println("Finding inverse modulo b ≡ " + x + "^-1 mod " + y);
 
-    int s = 1;
-    int t = 1;
+    int s = 1; // first of bézout's coefficient
+    int t = 1; // second of bézout's coefficient and the multiplicative inverse
 
     int n = lines.size() - 1;
     int i = n;
@@ -78,6 +77,9 @@ public class InverseModulo {
     }
   }
 
+  /*
+  * Euclidian Algorithm with steps
+  */
   public static int EA(int a, int b) {
     System.out.println();
     System.out.println("Calculating gcd(" + a + "," + b + ") ...");
@@ -90,8 +92,6 @@ public class InverseModulo {
     Q = (int) A / B;
     R = A % B;
     lines.add(new int[] { A, B, Q, R });
-    q.add(Q);
-    r.add(R);
 
     int[] line = lines.get(0);
     System.out.println("     0: " + line[0] + " = " + line[1] + " * " + line[2] + " + " + line[3]);
@@ -106,8 +106,6 @@ public class InverseModulo {
       R = A % B;        // R = Remainder
 
       lines.add(new int[] { A, B, Q, R });
-      q.add(Q);
-      r.add(R);
       i++;
       line = lines.get(i);
       System.out.println("     " + i + ": " + line[0] + " = " + line[1] + " * " + line[2] + " + " + line[3]);
