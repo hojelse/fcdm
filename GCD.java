@@ -16,10 +16,36 @@ public class GCD {
     int b = sc.nextInt();
     sc.close();
 
-    EA(a, b);
+    System.out.println(EA(a, b));
+    // EA_with_steps(a, b);
   }
 
-  public static void EA(int a, int b) {
+  private static int EA(int a, int b) {
+    int D = a;
+    int d = b;
+    int R, prev_d, prev_R;
+
+    R = D % d;
+    prev_d = d;
+    prev_R = R;
+
+    int i = 0;
+    while (R > 0) {
+
+      D = prev_d;       // D = Dividend
+      d = prev_R;       // d = Divisor
+      R = D % d;        // R = Remainder
+
+      prev_d = d;
+      prev_R = R;
+
+      i++;
+    }
+
+    return d;
+  }
+
+  public static void EA_with_steps(int a, int b) {
     System.out.println();
     System.out.println("Calculating gcd(" + a + "," + b + ") ...");
     System.out.println("     Format: Divident = Divisor * Quotient + Remainder");
