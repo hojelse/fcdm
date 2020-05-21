@@ -22,7 +22,7 @@ public class EEA {
   }
 
   public static void EAA(int a, int b) {
-
+    
   }
 
   public static void EAA_small(int a, int b) {

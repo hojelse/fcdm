@@ -26,27 +26,59 @@ public class InverseModulo {
   }
 
   public static void EAA(int x, int y) {
-    EA(x, y);
-    System.out.println();
+    int gcd = EA(x, y);
 
-    if(lines.get(lines.size() - 1)[3] != 1){
-      System.out.println("gcd != 0");
-    }
+    System.out.println("Finding inverse modulo b = " + x + "^-1 mod " + y);
 
-    int a = 1;
-    int b = 1;
+    int s = 1;
+    int t = 1;
 
     int n = lines.size() - 1;
     int i = n;
-    sub();
-    System.out.println(r.get(n));
+    
+    // first line
+    int[] line = lines.get(i);
+    int[] line2 = lines.get(i-1);
+    t = t * -1;
+    System.out.println("     Rewriting lines in terms of remainder and substituting in");
+    System.out.println("     " + i + ": 1 = (" + s + ")" + line[0] + " + (" + t + ")" + line[1]);
+
+    while (i > 1) {
+      line = lines.get(i);
+      line2 = lines.get(i-1);
+      if (i % 2 == n % 2){
+        System.out.println("        1 = (" + s + ")" + line[0] + " + (" + t + ")(" + line2[0] + " + (" + -line2[2] + ")" + line2[1] + ")");
+
+        int fac = -line2[2] * t;
+        System.out.println("        1 = (" + s + ")" + line[0] + " + (" + t + ")" + line2[0] + " + (" + fac + ")" + line2[1]);
+
+        s = s + fac;
+        System.out.println("     " + (i-1) + ": 1 = (" + s + ")" + line[0] + " + (" + t + ")" + line2[0]);
+      } else {
+        System.out.println("        1 = (" + s + ")(" + line2[0] + " + (" + -line2[2] + ")" + line2[1] + ") + (" + t + ")" + line[0]);
+
+        int fac = -line2[2] * s;
+        System.out.println("        1 = (" + s + ")" + line2[0] + " + (" + fac + ")" + line2[1] + " + (" + t + ")" + line[0]);
+
+        t = t + fac;
+        System.out.println("     " + (i-1) + ": 1 = (" + s + ")" + line2[0] + " + (" + t + ")" + line2[1]);
+      }
+      i--;
+    }
+
+    System.out.println("Bézout's coefficients of (" + x + "," + y + ") is (" + s + ", " + t + ")");
+    System.out.println(s + "*" + x + " + " + t + "*" + y + " = gcd(" + x + "," + y + ")");
+    if(gcd != 1) {
+      System.out.println(x + " and " + y + " are not coprime");
+      System.out.println("Inverse Modulo: " + x + "^-1 mod " + y + " = undefined");
+    } else {
+      System.out.println("Inverse Modulo (signed):   " + x + "^-1 mod " + y + " = " + t);
+      if(t < 0) t += y;
+      System.out.println("Inverse Modulo (positive): " + x + "^-1 mod " + y + " = " + t);
+    }
   }
 
-  public static void sub() {
-
-  }
-
-  public static void EA(int a, int b) {
+  public static int EA(int a, int b) {
     System.out.println();
     System.out.println("Calculating gcd(" + a + "," + b + ") ...");
     System.out.println("     Format: Divident = Divisor * Quotient + Remainder");
@@ -83,6 +115,7 @@ public class InverseModulo {
     }
 
     System.out.println("gcd(" + a + "," + b + ") = " + lines.get(i)[3]);
+    return lines.get(i)[3];
   }
 
 
