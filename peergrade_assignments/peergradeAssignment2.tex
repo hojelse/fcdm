@@ -1,0 +1,252 @@
+\documentclass[a4paper,11pt]{article}
+
+% Import packages
+\usepackage[a4paper]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bussproofs}
+\usepackage{proof}
+\usepackage{tikz}
+% \setlength{\parindent}{0em}
+
+% Change enumerate environments you use letters
+\renewcommand{\theenumi}{\alph{enumi}}
+
+\title{Peergrade assignment 2}
+\author{Author: Anon} 
+\date{\today}
+
+\begin{document} 
+
+\maketitle
+
+\section*{Exercise 1}
+
+\subsection*{1.1. Which of the relations holds?}
+
+\noindent (a) $A - B = \{4\}$ \textbf{false}
+
+$A-B = \{4\} \to 4 \in A$ but $4 \notin A$ therefore the statement is false.\\
+
+\noindent (b) $A \subseteq B \cup C$ \textbf{false}
+
+Counterexample.
+
+$5 \in A \land 5 \notin B \to A \nsubseteq B \to A \nsubseteq B \cap C$
+
+Therefore the statement is false.\\
+
+\noindent (c) $A - B \subseteq C$ \textbf{true}
+
+$A-B = \{5\}$. Observe definition of C. If $x=5 \to 5 = 2k + 1 \iff k = 2$,
+
+which means that $x=5 \to k \in \mathbb{N}$. C contains other elements different from 5.
+
+Example: 69. $k=34 \to k \in \mathbb{N} \to x=2 \cdot k + 1 \to x = 69$.
+
+Therefore the statement is true.\\
+
+\noindent (d) $(A \times B) \cup (A \times C) \subset A \times \mathbb{N}$ \textbf{true}
+
+Definition of C implies that $\forall x \in C, x \in \mathbb{N}$. Therefore $C \subseteq \mathbb{N}$.
+
+Lastly $\exists x \in \mathbb{N}, x \notin C$, example: $6 \notin \mathbb{N}$ but $6 \notin C$. Therefore $C \subset \mathbb{N}$.
+
+$C \subset \mathbb{N} \to (A \times C) \subset A \times \mathbb{N} \to (A \times B) \cup (A \times C) \subset A \times \mathbb{N}$
+
+Therefore the statement is true.
+
+\newpage
+\subsection*{1.2. Is $f \circ g$ injective, surjective and or bijective?}
+
+$f \circ g$:
+\begin{center}
+\begin{tikzpicture}[xscale=2,yscale = 1]
+    \node (A) at (0,5) {$A$};
+    \node (C) at (1,5) {$C$};
+    \node (a) at (0,4) {$a$};
+    \node (b) at (0,3) {$b$};
+    \node (c) at (0,2) {$c$};
+    \node (d) at (0,1) {$d$};
+    \node (6) at (1,4) {$6$};
+    \node (7) at (1,3) {$7$};
+    \node (8) at (1,2) {$8$};
+    \node (9) at (1,1) {$9$};
+    \node (0) at (1,0) {$0$};
+    \draw (a) -- (6);
+    \draw (b) -- (8);
+    \draw (c) -- (9);
+    \draw (d) -- (0);
+\end{tikzpicture}
+\end{center}
+
+\noindent (a) one-to-one (injective) \textbf{true}
+
+$\forall x_1, x_2 \in X, F(x_1) = F(x_2) \to x_1 = x_2$
+
+For every image there is a unique corresponding preimage.\\
+
+\noindent (b) onto (surjective) \textbf{false}
+
+$\forall y \in Y, \exists x \in X (F(x) = y)$
+
+Counterexample
+
+$\neg \exists x \in A (F(a)=7)$
+
+There doesn't exist a pre-image for the image 7\\
+
+\noindent (c) one-to-one correspondence (bijective) \textbf{false}
+
+For $f \circ g$ to be bijective, $f \circ g$ has to be both injective and surjective,
+
+but $f \circ g$ is not surjective therefore $f \circ g$ is not bijective.
+
+\newpage
+\subsection*{1.3. Hasse diagram}
+
+
+\textbf{Graph a}
+
+\noindent Partial orded set?
+
+reflexive \textbf{true}
+
+anti-symmetric \textbf{false}
+
+transitive \textbf{true}
+
+$\to$ partial orded set (poset) \textbf{false}\\
+
+\noindent Equivalence relation?
+
+reflexive \textbf{true}
+
+symmetric \textbf{true}
+
+transitive \textbf{true}
+
+$\to$ equivalence relation \textbf{true}
+
+
+$$[a]=\{x \in R | x R a\} = \{a,c,e\}$$
+
+$$[b]=\{x \in R | x R b\} = \{b,d\}$$
+
+$[a]=[c]=[e]$
+
+$[b]=[d]$\\
+
+\noindent \textbf{Graph b}
+
+\noindent Partial orded set?
+
+reflexive \textbf{true}
+
+anti-symmetric \textbf{true}
+
+transitive \textbf{true}
+
+$\to$ partial orded set (poset) \textbf{true}\\
+
+\noindent Equivalence relation?
+
+reflexive \textbf{true}
+
+symmetric \textbf{false}
+
+transitive \textbf{true}
+
+$\to$ equivalence relation \textbf{false}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+    \node (a) at (1,0) {$a$};
+    \node (b) at (0,0) {$b$};
+    \node (c) at (1,1) {$c$};
+    \node (d) at (0,-1) {$d$};
+    \node (e) at (1,2) {$e$};
+    \node (f) at (0,1) {$f$};
+    \draw (d) -- (b) -- (f);
+    \draw (b) -- (c);
+    \draw (a) -- (c) -- (e);
+\end{tikzpicture}
+\end{center}
+
+Maximum: e, f
+
+Minimum: d, a
+
+Greatest: none
+
+Least: none
+
+\newpage
+\section*{Exercise 2}
+Provide a proof by contradiction of this statement: Let $f : Ø \to A$ be a function with domain the empty set and an arbitrary set A as co-domain. Then f is one-to-one (injective).\\
+
+\noindent Proof.\\
+
+Suppose that the negation of the definition of one-to-one is true,
+
+$
+\exists x_1, x_2 \in \emptyset (F(x_1) = F(x_2) \to x_1 \neq x_2)
+$,
+
+where $x_1$ and $x_2$ is a arbitrary element.
+
+By definition of the empty set
+
+$\forall x \{ x \notin \emptyset \}$
+
+Therefore $x_1 \in \emptyset$ and $x_1 \notin \emptyset$, which is a contradiction.
+
+Therefore $f : \emptyset \to A$ is a one-to-one function.
+
+\section*{Exercise 3}
+\textit{Provide a direct proof of this statement:} Let A and B be two particular but arbitrary
+sets such that $B \subseteq A$, and let R be an equivalence relation on A. Consider the relation
+$S = \{(a,b) \in R | a,b \in B \}$ on the set B. Then S is an equivalence relation on B (that
+is, reflexive, symmetric and transitive).\\
+
+
+\noindent Proof.\\
+
+\noindent S is an equivalence relation on B if the set of relations describing relations between nodes in B has reflexive, symmetric and transitive properties.\\
+
+\noindent Sub-proof that S is reflexive.
+
+
+Definition of reflexive: R is reflexive $\iff \forall x \in A, x R x$.
+
+If $a \in A \land b \in B$ such that $a=b$ it means that $(a,a) \in R$ so per definition of S, $S = \{(a,b) \in R | a,b \in B \}$, it means that $(a,a)$ must be in S.
+
+Therefore $\forall x \in B, x R x$ which means that S is a reflexive relation on B.\\
+
+\noindent Sub-proof that S is symmetric.
+
+Definition of symmetric: R is symmetric $\iff \forall x, y \in A, x R y \to y R x $.
+
+Per definition of S, $S = \{(a,b) \in R | a,b \in B \}$, it means that $(a,b) \in R \to (b,a) \in R$.
+
+So if $a,b \in B \land (a,b) \in R \to ((a,b) \in R \to (b,a) \in R) \to (a,b),(b,a) \in S$.
+
+Therefore $\forall a, b \in B, a R b \to b R a$ which means that S is a symmetric relation on B.\\
+
+\noindent Sub-proof that S is transitive.
+
+Definition of transitive: R is transitive $\iff \forall x, y, z \in A, x R y \land y R z \to x R z$
+
+Let $a,b,c \in A$ and $a,b,c \in B$.
+
+Since R is transitive, then if $(a,b) \in R$ and $(b,c) \in R$ then $(a,c) \in R$ by definition of transitive $\forall x, y, z \in A, x R y \land y R z \to x R z $. So if (a,b) is in S and (b,c) is in S then (a,c) must be in S, since $a,b,c \in B$ and $a,c \in R$.
+
+Therefore $\forall a,b,c \in B, a R b \land b R c \to a R c$ which means that S is a transitive relation on B.\\
+
+\noindent Conclusion.
+
+S both a reflexive, symmetric and transitive relation on B, therefore S is an equivalence relation on B.
+
+
+\end{document}
