@@ -53,3 +53,4 @@ _____________________________________ →E
               Its cold
 ```
 
+See the full list of inference rules here [Rules of Natural Deduction in Predicate Logic.png](natural_deduction/Rules of Natural Deduction in Predicate Logic.png)
