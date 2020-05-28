@@ -3,11 +3,16 @@
 Assignments and answers
 
 ### Natural deduction
+
+Synonyms for deduct: infer, derive
+
 > In logic and proof theory, natural deduction is a kind of proof calculus in which logical reasoning is expressed by inference rules closely related to the "natural" way of reasoning. This contrasts with Hilbert-style systems, which instead use axioms as much as possible to express the logical laws of deductive reasoning. [Wikipedia](https://en.wikipedia.org/wiki/Natural_deduction)
 
 ### Propositional logic
 
 *Proposition* a statement proposing an idea that can be true or false.
+
+Synonyms for proposition: premise
 
 Letters (e.g. A, B, C) are used as abstract placeholders for concrete propositions (e.g. "it's snowing", "a dog is an animal", "the moon is made of cheese")
 
