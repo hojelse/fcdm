@@ -1,10 +1,16 @@
+# Excercise answers from notes-logics.pdf
+
+## Excercise 6
+### 6.1.
+P(t) → ∀x(P(x) → ¬Q(x)) → ¬Q(t)
+
 ```
 Require Import ProofWeb.
 
 Parameter P Q : D -> Prop.
 Parameter t: D.
 
-Theorem exercise_1 : P(t) -> all x, (P(x) -> ~Q(x)) -> ~Q(t).
+Theorem exercise_6_1 : P(t) -> all x, (P(x) -> ~Q(x)) -> ~Q(t).
 Proof.
 imp_i h1.
 imp_i h2.
@@ -25,12 +31,14 @@ Qed.
 ─────────────────────────────── →i[h1]
  P t → ∀x, (P x → ¬Q x) → ¬Q t        
 ```
+### 6.2.
+∀x(Q(x) → R(x)) → ∃x(P(x) ∧ Q(x)) → ∃x(P(x) ∧ R(x))
 ```
-​Require Import ProofWeb.
+Require Import ProofWeb.
 
 Parameter P Q R : D -> Prop.
 
-Theorem exercise_1_2: all x, (Q x -> R x) -> exi x, (P x /\ Q x) -> exi x, (P x /\ R x).
+Theorem exercise_6_2: all x, (Q x -> R x) -> exi x, (P x /\ Q x) -> exi x, (P x /\ R x).
 Proof.
 imp_i h1.
 imp_i h2.
@@ -64,12 +72,14 @@ Qed.
 ────────────────────────────────────────────────────────────────────────── →i[h1]
             ∀x, (Q x → R x) → ∃x, (P x ∧ Q x) → ∃x, (P x ∧ R x)                  
 ```
+### 6.3.
+∀x(A(x) ∨ B(x)) → ∀x(B(x) ∨ A(x))
 ```
-​Require Import ProofWeb.
+Require Import ProofWeb.
 
-Parameter A B P Q R : D -> Prop.
+Parameter A B : D -> Prop.
 
-Theorem exercise_1_3: all x, (A x \/ B x) -> all x, (B x \/ A x).
+Theorem exercise_6_3: all x, (A x \/ B x) -> all x, (B x \/ A x).
 Proof.
 imp_i h1.
 all_i t.
@@ -93,13 +103,15 @@ Qed.
 ────────────────────────────────────────────── →i[h1]   
        ∀x, (A x ∨ B x) → ∀x, (B x ∨ A x)
 ```
+### 6.4.
+∀x(A(x) ∧ B(x)) → ∃x(B(x))
 ```
 Require Import ProofWeb.
 
-Parameter A B P Q R : D -> Prop.
+Parameter A B : D -> Prop.
 Parameter t: D.
 
-Theorem exercise_1_4: all x, (A x /\ B x) -> exi x, (B x).
+Theorem exercise_6_4: all x, (A x /\ B x) -> exi x, (B x).
 Proof.
 imp_i h1.
 exi_i t.
@@ -119,13 +131,15 @@ Qed.
 ───────────────────────── →i[h1]
 ∀x, (A x ∧ B x) → ∃x, B x
 ```
+### 6.5.
+∀x(¬A(x)) → ¬∃x(A(x))
 ```
-​Require Import ProofWeb.
+Require Import ProofWeb.
 
-Parameter A B P Q R : D -> Prop.
+Parameter A : D -> Prop.
 Parameter t: D.
 
-Theorem exercise_1_5: all x, (~A x) -> ~exi x, (A x).
+Theorem exercise_6_5: all x, (~A x) -> ~exi x, (A x).
 Proof.
 imp_i h1.
 neg_i h2.
@@ -150,13 +164,15 @@ Qed.
 ─────────────────────────────────── →i[h1]
         ∀x, ¬A x → ¬∃x, A x               
 ```
+### 6.6.
+∀x(P(x) → Q(x)) → ∃x(P(x)) → ∃x(Q(x))
 ```
 Require Import ProofWeb.
 
-Parameter A B P Q R : D -> Prop.
+Parameter P Q : D -> Prop.
 Parameter t: D.
 
-Theorem exercise_1_6: all x, (P x -> Q x) -> exi x, (P x) -> exi x, (Q x).
+Theorem exercise_6_6: all x, (P x -> Q x) -> exi x, (P x) -> exi x, (Q x).
 Proof.
 imp_i h1.
 imp_i h2.
@@ -184,13 +200,15 @@ Qed.
 ────────────────────────────────────────── →i[h1]
     ∀x, (P x → Q x) → ∃x, P x → ∃x, Q x          
 ```
+### 7.1.
+(∃x(P(x)) ∨ ∃x(Q(x))) → ∃x(P(x) ∨ Q(x))
 ```
-​Require Import ProofWeb.
+Require Import ProofWeb.
 
-Parameter A B P Q R : D -> Prop.
+Parameter P Q : D -> Prop.
 Parameter t: D.
 
-Theorem exercise_2_1: (exi x, P x \/ exi x, Q x) -> exi x, (P x \/ Q x).
+Theorem exercise_7_1: (exi x, P x \/ exi x, Q x) -> exi x, (P x \/ Q x).
 Proof.
 imp_i h1.
 dis_e (exi x, P x \/ exi x, Q x) h2 h3.
@@ -220,13 +238,15 @@ Qed.
 ──────────────────────────────────────────────────────────────────────────────────── →i[h1]                                     
                          ∃x, P x ∨ ∃x, Q x → ∃x, (P x ∨ Q x)                                                                    
 ```
+### 7.2.
+∃x∃y(P(x, y)) → ∃y∃x(P(x, y))
 ```
 Require Import ProofWeb.
 
 Parameter P : D -> D -> Prop.
 Parameter t: D.
 
-Theorem exercise_2_2: exi x, exi y, (P x y) -> exi y, exi x, (P x y).
+Theorem exercise_7_2: exi x, exi y, (P x y) -> exi y, exi x, (P x y).
 Proof.
 imp_i h1.
 exi_e (exi x, exi y, P x y) a h2.
@@ -251,13 +271,15 @@ Qed.
 ───────────────────────────────────────────── →i[h1]
         ∃x, ∃y, P x y → ∃y, ∃x, P x y               
 ```
+### 7.3.
+∃x(P(x)) → ∀x∀y(P(x) → Q(y)) → ∀y(Q(y))
 ```
 Require Import ProofWeb.
 
 Parameter P Q : D -> Prop.
 Parameter t: D.
 
-Theorem exercise_2_3: exi x, (P x) -> all x, all y, (P x -> Q y) -> all y, (Q y).
+Theorem exercise_7_3: exi x, (P x) -> all x, all y, (P x -> Q y) -> all y, (Q y).
 Proof.
 imp_i h1.
 imp_i h2.
@@ -288,13 +310,15 @@ Qed.
 ────────────────────────────────────────────── →i[h1]
     ∃x, P x → ∀x, ∀y, (P x → Q y) → ∀y, Q y          
 ```
+### 7.4.
+∃x(¬P(x)) → ¬∀x(P(x))
 ```
-​Require Import ProofWeb.
+Require Import ProofWeb.
 
-Parameter P Q : D -> Prop.
+Parameter P : D -> Prop.
 Parameter t: D.
 
-Theorem exercise_2_4: exi x, (~P x) -> ~all x, P x.
+Theorem exercise_7_4: exi x, (~P x) -> ~all x, P x.
 Proof.
 imp_i h1.
 neg_i h2.
@@ -319,13 +343,15 @@ Qed.
 ───────────────────────────────── →i[h1]
        ∃x, ¬P x → ¬∀x, P x              
 ```
+### 7.5.
+¬∀x(P(x)) → ∃x(¬P(x))
 ```
-​Require Import ProofWeb.
+Require Import ProofWeb.
 
-Parameter P Q : D -> Prop.
+Parameter P : D -> Prop.
 Parameter t: D.
 
-Theorem exercise_2_5: ~all x, (P x) -> exi x, ~P x.
+Theorem exercise_7_5: ~all x, (P x) -> exi x, ~P x.
 Proof.
 imp_e (~exi x, ~P x -> ~~all x, P x).
 imp_i h1.
@@ -364,13 +390,15 @@ Qed.
 ───────────────────────────────────────────────────────────────────────────────────── →e     
                                  ¬∀x, P x → ∃x, ¬P x                                         
 ```
+### 8.1.
+∃x∀y(P(x, y)) → ∀x∃y(P(y, x))
 ```
-​Require Import ProofWeb.
+Require Import ProofWeb.
 
-Parameter P Q : D -> D -> Prop.
+Parameter P : D -> D -> Prop.
 Parameter t: D.
 
-Theorem exercise_3_1: exi x, all y, P x y -> all x, exi y, P y x.
+Theorem exercise_8_1: exi x, all y, P x y -> all x, exi y, P y x.
 Proof.
 imp_i h1.
 exi_e (exi x, all y, P x y) a h2.
@@ -394,44 +422,15 @@ Qed.
 ─────────────────────────────── →i[h1]
  ∃x, ∀y, P x y → ∀x, ∃y, P y x        
 ```
+### 8.2.
+¬∃x(P(x)) → ∀x(¬P(x))
 ```
 Require Import ProofWeb.
 
-Parameter P Q : D -> Prop.
+Parameter P : D -> Prop.
 Parameter t: D.
 
-Theorem exercise_3_2: exi x, ~P x -> ~all y, P y.
-Proof.
-imp_i h1.
-neg_i h2.
-exi_e (exi x, ~P x) a h3.
-exact h1.
-neg_e (P a).
-exact h3.
-all_e (all x , P x).
-exact h2.
-Qed.
-```
-```
-                      [∀y, P y]h2       
-                      ─────────── ∀e    
-             [¬P a]h3     P a           
-             ──────────────────── ¬e    
-[∃x, ¬P x]h1          ⊥               
-───────────────────────────────── ∃e[h3]
-               ⊥                      
-───────────────────────────────── ¬i[h2]
-             ¬∀y, P y                   
-───────────────────────────────── →i[h1]
-       ∃x, ¬P x → ¬∀y, P y              
-```
-```
-Require Import ProofWeb.
-
-Parameter P Q : D -> Prop.
-Parameter t: D.
-
-Theorem exercise_3_3: ~exi x, P x -> all x, ~ P x.
+Theorem exercise_8_3: ~exi x, P x -> all x, ~ P x.
 Proof.
 imp_i h1.
 all_i a.
@@ -455,13 +454,15 @@ Qed.
 ──────────────────── →i[h1]
  ¬∃x, P x → ∀x, ¬P x
 ```
+### 8.4.
+∃x(P(x) ∨ Q(x)) ≡ ∃x(P(x)) ∨ ∃x(Q(x))
 ```
-​Require Import ProofWeb.
+Require Import ProofWeb.
 
 Parameter P Q : D -> Prop.
 Parameter t: D.
 
-Theorem exercise_3_4: all x, (P x /\ Q x) <-> (all x, P x /\ all x, Q x).
+Theorem exercise_8_4: all x, (P x /\ Q x) <-> (all x, P x /\ all x, Q x).
 Proof.
 iff_i h1 h2.
 con_i.
@@ -497,7 +498,7 @@ Qed.
                               ∀x, (P x ∧ Q x) ↔ ∀x, P x ∧ ∀x, Q x                                         
 ```
 ```
-​Require Import ProofWeb.
+Require Import ProofWeb.
 
 Parameter P Q : D -> Prop.
 Parameter t: D.
