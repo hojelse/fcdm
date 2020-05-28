@@ -1,2 +1,2 @@
 # Discrete Mathematics
-Autumn 2019 FCDM ITU - Notes
+Foundations of Computing - Discrete Mathematics BSc (Autumn 2019)
