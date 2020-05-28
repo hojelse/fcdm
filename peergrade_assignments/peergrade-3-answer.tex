@@ -1,0 +1,263 @@
+\documentclass[a4paper,11pt]{article}
+
+% Import packages
+\usepackage[a4paper]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bussproofs}
+\usepackage{proof}
+\usepackage{tikz}
+
+\newcommand*{\QEDA}{\hfill\ensuremath{\blacksquare}}%
+\newcommand*{\QEDB}{\hfill\ensuremath{\square}}%
+
+% Change enumerate environments you use letters
+\renewcommand{\theenumi}{\alph{enumi}}
+
+\title{Peergrade assignment 3}
+\author{Author: Kristoffer Højelse} 
+\date{\today}
+
+\begin{document} 
+
+\maketitle
+
+\section*{Exercise 1}
+
+\subsection*{1.1.}
+
+\noindent (a) \textbf{true}
+
+Example: $a,d$ is a walk without repeated edges and vertices.
+
+\noindent (b) \textbf{false}
+
+Counterexample.
+
+$c$ and $d$ is not connected.
+
+Therefore there is no simple path from $c$ to $d$.
+
+\noindent (c) \textbf{false}
+
+Counterexample.
+
+There is no path from $c$ to $d$
+\subsection*{1.2.}
+
+\noindent (a) \textbf{true}
+
+The given graph is a tree, because the graph is connected and there doesn't exist a simple circuit.
+
+\noindent (b) \textbf{true}
+
+There exists a way to root the tree such that the graph is a binary tree.
+
+\begin{center}
+\begin{tikzpicture}[xscale=0.6,yscale = 1]
+    \node (a) at (0,5) {$a$};
+    \node (b) at (-1,4) {$b$};
+    \node (c) at (-4,1) {$c$};
+    \node (d) at (-3,2) {$d$};
+    \node (e) at (1,4) {$e$};
+    \node (f) at (-2,1) {$f$};
+    \node (g) at (-2,3) {$g$};
+    \node (h) at (0,3) {$h$};
+    \draw (a) -- (b) -- (g) -- (d) -- (c);
+    \draw (a) -- (e);
+    \draw (b) -- (h);
+    \draw (d) -- (f);
+\end{tikzpicture}
+\end{center}
+
+If you root the tree by vertex b or d, the graph will not be a binary tree.
+
+\noindent (c) \textbf{true}
+
+There exists a way to root and arrange the graph such that the graph is a complete binary tree.
+
+\begin{center}
+\begin{tikzpicture}[xscale=0.6,yscale = 1]
+    \node (a) at (-3,-2) {$a$};
+    \node (b) at (-2,-1) {$b$};
+    \node (c) at (1,-2) {$c$};
+    \node (d) at (2,-1) {$d$};
+    \node (e) at (-3,-3) {$e$};
+    \node (f) at (3,-2) {$f$};
+    \node (g) at (0,0) {$g$};
+    \node (h) at (-1,-2) {$h$};
+    \draw (g) -- (b) -- (a) -- (e);
+    \draw (b) -- (h);
+    \draw (g) -- (d) -- (f);
+    \draw (d) -- (c);
+\end{tikzpicture}
+\end{center}
+
+\newpage
+\section*{Exercise 2}
+
+\subsection*{2.1.}
+(a)
+
+$a_{[2;9]} = 2^2, 3^2, 4^2, 5^2, 6^2, 7^2, 8^2, 9^2$
+
+$a_{[2;9]} = 4,9,16,25,36,59,64,81$
+
+\noindent (b)
+
+$b_{[2;9]} = {1 \over 2}, {1 \over 3}, {1 \over 4}, {1 \over 5}, {1 \over 6}, {1 \over 7}, {1 \over 8}, {1 \over 9}$
+
+\noindent (c)
+
+$c_2 = a_1 \cdot b_1 + a_2 \cdot b_2 = 1 \cdot {1 \over 1} + 4 \cdot {1 \over 2} = 1 + 2 = 3$
+
+apparently $k$ can be described as $k = a_k \cdot b_k$ therefore $c_k$ can be described as:
+
+$c_k = c_{k-1} + k$ for $k > 2$
+
+$c_3 = c_2 + 3 = 3 + 3 = 6$
+
+$c_4 = 6 + 4 = 10$
+
+$c_5 = 10 + 5 = 15$
+
+$c_6 = 15 + 6 = 21$
+
+$c_7 = 21 + 7 = 28$
+
+$c_8 = 28 + 8 = 36$
+
+$c_9 = 36 + 9 = 45$
+
+$c_{[2;9]} = 3,10,15,21,28,36,45$
+
+\subsection*{2.2.}
+(a)
+
+$(763636 \cdot 437813 \cdot 936257) \mod 43$
+
+$= ((763636 \mod 43) \cdot (437813 \mod 43) \cdot (936257 \mod 43)) \mod 43$
+
+$= 19$
+\noindent (b)
+
+$(763636 \cdot (437813 + 936257)) \mod 43$
+
+$= ((894461 \mod 59) \cdot ((206193 \mod 59) + (83218 \mod 59))) \mod 59$
+
+$= 41$
+
+\subsection*{2.3.}
+
+(a)\\
+\noindent Octal to binary
+
+Each character in octal can be represented by exactly 3 bits. 
+
+Therefore I'm just concatenating blocks of 3 bits starting with the least significant digits.
+Example: 
+$(7)_8 = (111)_2$ and $(1)_8 = (001)_2$ therefore  $(17)_8 = (001111)_2$.\\
+
+$(73217)_8 = (111011010001111)_2$\\
+
+\noindent Octal to decimal
+
+$(73217)_8 = (7 \cdot 8^0 + 8 \cdot 8^1 + 2 \cdot 8^2 + 3 \cdot 8^3 + 7 \cdot 8^4)_{10} = (30351)_{10}$
+
+\noindent (b)
+
+$62290 = 8 \cdot 7786 + 2$
+
+$7786 = 8 \cdot 973 + 2$
+
+$973 = 8 \cdot 121 + 5$
+
+$121 = 8 \cdot 15 + 1$
+
+$5 = 8 \cdot 1 + 7$
+
+$1 = 8 \cdot 0 + 1$
+
+$(62290)_{10} = (171522)_8$\\
+
+
+$62290 = 16 \cdot 3893 + 2$
+
+$3893 = 16 \cdot 243 + 5$
+
+$243 = 16 \cdot 15 + 3$
+
+$15 = 16 \cdot 0 + 15$
+
+$(62290)_{10} = (F352)_{16}$
+
+\subsection*{2.4.}
+(a)
+
+$a = bq + r$
+
+$2574 = 1976 \cdot 1 + 598$
+
+$1976 = 598 \cdot 3 + 182$
+
+$598 = 182 \cdot 3 + 52$
+
+$182 = 52 \cdot 3 + 26$
+
+$52 = 26 \cdot 2 + 0$
+
+$gcd(2574,1976) = 26$
+
+\noindent (b)
+
+$1525 = 4405 \cdot 0 + 1525$
+
+$4405 = 1525 \cdot 2 + 1355$
+
+$1525 = 1355 \cdot 1 + 170$
+
+$1355 = 170 \cdot 7 + 165$
+
+$170 = 165 \cdot 1 + 5$
+
+$165 = 5 \cdot 33 + 0$
+
+$gcd(1525,4405) = 5$
+
+$lcm(1525, 4405) = \frac{1525 \cdot 4405}{5} = 1343525$
+
+\newpage
+\section*{Exercise 3}
+
+\noindent Assumptions
+
+A1: $x,y,z,m \in \mathbb{Z}$
+
+A2: $x \equiv y (\mathbf{mod}\ m)$
+
+A3: $m|z$
+
+\noindent Theorems
+
+T1: $a|b \land a|c \to a | (b+c)$
+
+T2: $a \equiv b (\mathbf{mod}\ m) \iff m | a - b$
+
+\noindent To prove $x+2z \equiv y (\mathbf{mod}\ m)$
+
+\noindent Proof.
+
+By T2, $\exists m$ such that $m|x-y \land m|z$
+
+By T1, $m|z \land m|x-y$ implies $m|(x-y)+z$ which you can rearrange to $m | (x+z)-y$
+
+By T2, $m | (x-y) - z$ implies $x+z \equiv y (\mathbf{mod}\ m)$, where $a$ from T2 corresponds to $(x+z)$ and $b$ from T2 corresponds to $y$
+
+By T1, $m|z \land m|z$ implies $m | z+z$ which means that adding another z wont affect the truth of the statement, therefore
+
+$x+z \equiv y (\mathbf{mod}\ m)$ implies $x+2z \equiv y (\mathbf{mod}\ m)$
+
+\QEDA
+
+\end{document}

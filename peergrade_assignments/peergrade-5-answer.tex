@@ -1,0 +1,144 @@
+\documentclass[a4paper,11pt]{article}
+
+% Import packages
+\usepackage[a4paper]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bussproofs}
+\usepackage{proof}
+\usepackage{tikz}
+
+\newcommand*{\QEDA}{\hfill\ensuremath{\blacksquare}}%
+\newcommand*{\QEDB}{\hfill\ensuremath{\square}}%
+
+\usepackage{libertine}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+% Change enumerate environments you use letters
+\renewcommand{\theenumi}{\alph{enumi}}
+
+\title{Peergrade assignment 4}
+\author{Author: Kristoffer Højelse} 
+\date{\today}
+
+\begin{document} 
+
+\maketitle
+
+\section{}
+
+\subsection{}
+
+There are four suits (the domain). \\
+
+The co-domain, to ensure at least two cards of the same suit, will be
+$4 + 1 = 5$ cards
+
+\subsection{}
+
+$13 \cdot 3 + 1 = 40$ cards
+
+\section{}
+
+S = snow, A = Arrive on time\\
+
+\noindent Probability of all four outcomes: \\
+
+$P(S) \cdot P(\bar A|S) = 0.65 \cdot (1-0.72) = 0.182$ \\
+
+$P(S) \cdot P(A|S) = 0.65 \cdot 0.72 = 0.468$ \\
+
+$P(\bar S) \cdot P(\bar A|\bar S) = (1 - 0.65) \cdot (1 - 0.96) = 0.014$ \\
+
+$P(\bar S) \cdot P(A|\bar S) = (1-0.65) \cdot 0.96 = 0.336$
+
+\subsection{}
+
+$P(A) = P(\bar S) \cdot (A|\bar S) + P(S) \cdot (A|S)$ \\
+
+$P(A) = 0.336 + 0.468 = 0.804 = 80.4\%$
+
+\subsection{}
+
+Probability of it snowing given not arive on time: \\
+
+$P(S|\bar A) = \frac{P(S) \cdot P(\bar A|S)}{P(\bar A)} = \frac{0.182}{1-0.804} = 0.9286 = 92.86\%$
+
+\section{}
+
+\subsection{}
+
+unique dishes = $5 + 4 + 7 = 16$ \\
+
+combinations of size 6 from set of size 16 \\
+
+$\binom{16}{6} = \frac{16!}{(16-6)! \cdot 6!} = 8008$
+
+\subsection{}
+
+Product of combinations of 2 veg from 5, 2 fish from 4 and 2 meat from 7 \\
+
+Valid combinations = $\binom{5}{2} \cdot \binom{4}{2} \cdot \binom{7}{2} = 1260$\\
+
+\noindent The probability is the ratio between number of valid combinations and number of all combinations \\
+
+$\frac{1260}{8008} = 0.1573 = 15.73\%$
+
+\subsection{}
+
+The constant price for the four predetermined dishes:\\
+
+$2 \cdot 6eur + 1 \cdot 5eur + 1 \cdot 3eur = 20eur$\\
+
+\noindent Sample space (not including duplicates): \\
+
+$S = \{VV,VF,FM,FF,FM,MM\}$\\
+
+\noindent Let $X(s)$ be the random variable that equals the sum of the prices of the dishes.\\
+
+E.g.: $X(VF) = 3 + 5 = 8$\\
+
+\noindent $X(VV) = 6$ \\
+$X(VF) = 8$ \\
+$X(VM) = 9$ \\
+$X(FF) = 10$ \\
+$X(FM) = 11$ \\
+$X(MM) = 12$\\
+
+\noindent Number of all combinations = $\binom{12}{2} = 66$\\
+
+\noindent Number of valid combinations for $S_n$  $= \{\binom{4}{2}, 4 \cdot 3, 4 \cdot 5, \binom{3}{2}, 3 \cdot 5, \binom{5}{2}\}$\\
+
+$ = \{6, 12, 20, 3, 15, 10\}$\\
+
+\noindent divided by 66 to get probability: \\
+
+$P(X = S_n) = \{0.0909,0.1818,0.3030,0.045,0.2272,0.1515\}$\\
+
+\noindent $E(X) = 20eur + \sum P(s) \cdot Price(s) = 29.5eur$
+
+\end{document}
