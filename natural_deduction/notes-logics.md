@@ -1,5 +1,6 @@
-Require Import ProofWeb.
 ```
+Require Import ProofWeb.
+
 Parameter P Q : D -> Prop.
 Parameter t: D.
 
