@@ -1,0 +1,247 @@
+\documentclass[a4paper,11pt]{article}
+
+% Import packages
+\usepackage[a4paper]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bussproofs}
+\usepackage{proof}
+
+% Change enumerate environments you use letters
+\renewcommand{\theenumi}{\alph{enumi}}
+
+\title{Peergrade assignment 1}
+\author{Author: Anon} 
+\date{\today}
+
+\begin{document} 
+
+\maketitle
+
+\section*{Exercise 1}
+
+\subsection*{1.1. Prove in natural deduction...}
+
+$$
+\infer[ \to I^{h_1} ]{ (\neg A \lor \neg B) \to (C \to (A \land B)) \to \neg C }{
+    \infer[ \to I^{h_2} ]{ (C \to (A \land B)) \to \neg C }{
+        \infer[ \neg I^{h_3} ]{ \neg C }{
+            \infer[\neg E]{ \bot }{
+                \infer[\neg i^{h_4}]{ \neg ( A \land B) }{
+                    \infer[ \lor e^{h_5 , h_6} ]{\bot}{
+                        \infer[h_1]{\neg A \lor \neg B}{}
+                        &
+                        \infer[\neg e]{\bot}{
+                            \infer[h_5]{\neg A}{}
+                            &
+                            \infer[\land e_1]{A}{
+                                \infer[h_4]{A \land B}{}
+                            }
+                        }
+                        &
+                        \infer[\neg e]{\bot}{
+                            \infer[h_6]{\neg B}{}
+                            &
+                            \infer[\land e_1]{B}{
+                                \infer[h_4]{A \land B}{}
+                            }
+                        }
+                    }
+                }
+                &
+                \infer[\to E]{A \land B}{
+                    \infer[h_3]{C}{}
+                    &
+                    \infer[h_2]{C \to A \land B}{}
+                }
+            }
+        }
+    }
+}
+$$
+
+Note: at $\neg i^{h_4}$ the proof for De Morgan's Law begins, the equivalence of:
+
+$$\neg(A \land B) \equiv (\neg A \lor \neg B) $$
+
+\subsection*{1.2. Construct a truth table...}
+
+\begin{center}
+\begin{tabular}{ |c c c| c | c c | c }
+ A & B & C & $\neg C$ & $A \land B$ & $ C \to (A \land B) $ & $ (C \to (A \land B)) \to \neg C $ \\ 
+ T & T & T & F & T & T & F \\  
+ T & T & F & T & T & T & T \\
+ T & F & T & F & F & F & T \\
+ T & F & F & T & F & T & T \\
+ F & T & T & F & F & F & T \\
+ F & T & F & T & F & T & T \\
+ F & F & T & F & F & F & T \\
+ F & F & F & T & F & T & T \\
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{ c c c | c }
+ $ \neg A $ & $ \neg B $ & $ \neg A \lor \neg B $ & $ (\neg A \lor \neg B) \to (C \to (A \land B)) \to \neg C $ \\ 
+ F & F & F & T \\  
+ F & F & F & T \\
+ F & T & T & T \\
+ F & T & T & T \\
+ T & F & T & T \\
+ T & F & T & T \\
+ T & T & T & T \\
+ T & T & T & T \\
+\end{tabular}
+\end{center}
+
+It seems that $ (\neg A \lor \neg B) \to (C \to (A \land B)) \to \neg C $ is a Tautology.
+
+$$ \bold{T} \equiv (\neg A \lor \neg B) \to (C \to (A \land B)) \to \neg C $$
+
+\newpage
+\section*{Exercise 2}
+\subsection*{2.1}
+Expression using quantifiers
+
+T = table, L = has legs
+\begin{equation}
+    \exists x(T(x) \to \neg L(x))
+\end{equation}
+Negation of the statement
+
+T = table, L = has legs
+\begin{equation}
+    \forall x(T(x) \to L(x))
+\end{equation}
+Expression using English
+
+For all x,
+if x is a table
+then x has legs.
+
+\subsection*{2.2}
+Expression using quantifiers
+
+E = Even
+\begin{equation}
+    \forall x \in Z(E(x) \to \exists y \in Z((y = x^{2}) \to E(y))
+\end{equation}
+Negation of the statement
+
+E = Even
+
+\begin{equation}
+    \exists x \in Z(E(x) \to \exists y \in Z((y = x^{2}) \to \neg E(y))
+\end{equation}
+Expression using English
+
+There exists an x in the domain of all integers,
+if x is an even integer
+then there exists a y in the domain of all integers,
+if y is equal to the square of x,
+then y is NOT an even integer.
+
+\subsection*{2.3}
+Expression using quantifiers
+
+H = Is a house, P = Has pink doors
+
+\begin{equation}
+    \exists x ( H(x) \to P(x) )
+\end{equation}
+Negation of the statement
+
+H = Is a house, P = Has pink doors
+\begin{equation}
+    \forall x (H(x) \to \neg P(x))
+\end{equation}
+Expression using English
+
+For all x,
+if x is a house
+then x does not have pink doors.
+
+\subsection*{2.4}
+Expression using quantifiers
+
+P = Is a part of "the pigs", F = Can fly, D = Can dance
+
+\begin{equation}
+    \forall x( P(x) \to F(x) \land D(x) )
+\end{equation}
+Negation of the statement
+
+P = Is a part of "the pigs", F = Can fly, D = Can dance
+\begin{equation}
+    \exists x( P(x) \to \neg (F(x) \land D(x)) )
+\end{equation}
+Expression using English
+
+There exists an x where,
+if x is a part of "the pigs"
+then x can not fly and dance.
+
+\subsection*{2.5}
+Expression using quantifiers
+
+Q = Rational
+
+\begin{equation}
+    \exists x \left( Q(x) \to \sqrt{Q(x)} = 2 \right)
+\end{equation}
+Negation of the statement
+
+Q = Rational
+\begin{equation}
+    \forall x \left( Q(x) \to \sqrt{Q(x)} \neq 2 \right)
+\end{equation}
+Expression using English
+
+For all x,
+if x is a rational number
+then the square root of x is not equal to 2.
+
+\newpage
+\section*{Exercise 3}
+\subsection*{Prove in natural deduction...}
+
+$$
+\infer[\to I^{h_1}]{\forall x (A(x) \to B(x)) \to \exists y (\neg B(y)) \to \neg \forall z (A(z))}{
+    \infer[\to I^{h_2}]{\exists y (\neg B(y)) \to \neg \forall z (A(z))}{
+        \infer[\neg I^{h_3}]{\forall z (A(z))}{
+            \infer[\neg e]{\bot}{
+                \infer[\exists e^{h_4}]{\neg B(a)}{
+                    \infer[h_2]{\exists y (\neg B(y))}{}
+                    &
+                    \infer[\neg e]{\neg B(a)}{
+                        \infer[h_4]{\neg B(y)}{}
+                        &
+                        \infer[\to e]{B(y)}{
+                            \infer[\forall e]{A(y) \to B(y)}{
+                                \infer[h_1]{\forall x (A(x) \to B(x))}{}
+                            }
+                            &
+                            \infer[\forall e]{A(y)}{
+                                \infer[h_3]{\forall z (A(z))}{}
+                            }
+                        }
+                    }
+                }
+                &
+                \infer[]{B(a)}{
+                    \infer[\forall e]{A(a) \to B(a)}{
+                        \infer[h_1]{\forall x (A(x) \to B(x))}{}
+                    }
+                    &
+                    \infer[\forall e]{A(a)}{
+                        \infer[h_3]{\forall z (A(z))}{}
+                    }
+                }
+            }
+        }
+    }
+}
+$$
+
+\end{document}

@@ -1,0 +1,167 @@
+\documentclass[a4paper,11pt]{article}
+
+% Import packages
+\usepackage[a4paper]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{proof}
+
+% Change enumerate environments you use letters
+\renewcommand{\theenumi}{\alph{enumi}}
+
+% Set title, author name and date
+\title{Informal proofs}
+\author{Author: Kristoffer Højelse} % Do not include your name, as Peergrading is anonymous 
+\date{\today}
+
+\begin{document} 
+
+\maketitle
+
+\section{Notes}
+
+\subsection{Proof the sum of two even numbers is even.}
+
+Let $n, m \in \mathbb{Z}$ , such that  $n$ is even and $m$ is even.
+
+By definition there exists $k, l \in \mathbb{Z}$ such that $n= 2 \cdot k$ and $m = 2 \cdot l$.
+
+Therefore, $n+m = 2 \cdot k + 2 \cdot l$
+
+$n+m = 2(k + l)$
+
+Hence, by definition $n+m$ is even.
+
+\subsection{Proof the sum of two Rational numbers is even.}
+
+Let $r, q \in \mathbb{R}$ , such that  $r$ and $q$ is rational.
+
+By definition there are $a,b,c,d, \in \mathbb{Z}$ such that $b \neq 0, d \neq 0$ and $r = \frac{a}{b}, q = \frac{c}{d}$.
+
+Then, $r+q = \frac{a}{b} + \frac{c}{d} = \frac{ad + cb}{bd}$
+
+Hence, $r+q$ is rational.
+
+\subsection{Proof if the square of an integer is even, then the integer itself is even.}
+if $n$ is not even, then $n$ is odd.
+
+$ \neg Even(n) \to Odd(n) \equiv Even(n) \lor Odd(n) $
+
+
+Let $n, \in Z$ , such that $n$ is not even.
+
+By the Parity Theorem, $n$ is odd.  
+
+By definition there exists $k \in Z$ such that $n = 2k+n$.
+
+$n^2 = (2k+n)^2 = (4k)^2 + 2 \cdot 2k \cdot n + n^2$
+
+$ 2 \cdot 2k^2 + 2 \cdot 2k + n $
+
+$ 2(2k^2 + 2k) + n $
+
+By definition $x^2$ is odd.
+
+Hence, by the Parity Theorem, $n^2$ is not even.
+
+\subsection{}
+
+Propostion:
+
+The negative of any irrational number is rational
+
+
+For all real numbers $r$, if $r$ is irrational then $\neg r$ is irrational,
+
+or
+
+$$\forall r \in \mathbb{R}. r \notin \mathbb{Q} \to \neg r \notin \mathbb{Q}$$
+
+Contraposition
+
+$$\forall r \in \mathbb{R}. \neg (\neg r \notin \mathbb{Q}) \to \neg (r \notin Q) $$
+
+
+$$\equiv \forall r \in \mathbb{R}. \neg r \in \mathbb{Q} \to r \in \mathbb{Q} $$
+
+Let $r \in \mathbb{R}$ such that $- r \in \mathbb{Q}$
+
+By def. there are $a,b \in \mathbb{Z}$ such that $b \neq 0$ and $- r = \frac{a}{b}$
+
+$$(-r)(- 1) = \frac{a}{b} (- 1)$$
+
+$$r = \frac{\neg a}{b}$$
+
+Hence by def. $r$ is rational.
+
+\subsection{Proof by contradiction}
+
+Proposition:
+
+There is no greatest integer.
+
+$N \geq n$ 
+
+
+$ \neg \exists N \in \mathbb{Z}. \forall n \in \mathbb{N}. N \geq n $
+
+Assume $\exists N \in \mathbb{Z}. \forall n \in \mathbb{N}. N \geq n$
+
+Let $N \in \mathbb{Z}$ such that $\forall n \in \mathbb{Z}. N \geq n$
+
+substitute $n$ with $N+1$
+
+In particular, this means $N \geq N + 1$
+
+Contradiction. Therefore $\neg \exists N \in \mathbb{Z}. \forall n \in \mathbb{Z}. N \geq n$
+
+\subsection{Proof by cases}
+
+Propostion
+
+For any integer $n$, $n^2 - n + 3$ is odd.
+
+
+Let $n \in \mathbb{Z}$, By the Parity Theorem,
+
+$n$ is even or $n$ is odd. We proceed by cases
+
+1. $n$ is even
+
+
+By def. there is some $k \in \mathbb{Z}$ such that $n = 2k$.
+
+
+Hence,
+
+
+$n^2 - n + 3 = (2k)^2 - 2k + 3$
+
+
+udled
+
+
+$= 2 \cdot (2k^2 - k + 1) + 1$
+
+Hence, $n^2 - n + 3$ odd.
+
+2. $n$ is odd
+
+$\exists k$ such that $n = 2k + 1$
+
+$n^2 - n + 3 = 2 \cdot 2k^2 + 2 \cdot 2k + 1 - (2k + 1)$
+
+$= 2 (2k^2 + 2k + 1 - k) + 1$
+
+\subsection{Proof by exhaustion}
+
+\subsection{Disproving a Universal Statement}
+
+Disproving Universal $\to$ find counterexample
+
+\subsection{Disproving a Existential Statement}
+
+Disproving Existential $\to$ proof all
+
+\end{document}
