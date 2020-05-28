@@ -1,5 +1,5 @@
-# Excercise answers from notes-logics.pdf
-Excercise answers from notes-logics.pdf
+# Propositional logic exercises
+Excercise answers from basic-exercises.pdf
 
 ## Excercise 1
 
@@ -55,3 +55,7 @@ Qed.
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── →i[h1]                        
                                                     (S ∧ R ∨ Q ∧ P) ∨ P ∧ Q ∨ R ∧ S → (P ∨ S) ∨ Q ∨ R                                                                                   
 ```
+
+## Excercise 1
+
+### 1.10.
