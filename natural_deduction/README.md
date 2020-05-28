@@ -9,7 +9,7 @@ Assignments and answers
 
 *Proposition* a statement proposing an idea that can be true or false.
 
-Logic with letters (e.g. A, B, C) as abstract placeholders for concrete propositions (e.g. "it's snowing", "a dog is an animal", "the moon is made of cheese")
+Letters (e.g. A, B, C) are used as abstract placeholders for concrete propositions (e.g. "it's snowing", "a dog is an animal", "the moon is made of cheese")
 
 ### Predicate logic
 
