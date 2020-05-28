@@ -11,7 +11,7 @@ Tool for double checking proofs [proofweb](http://proofweb.cs.ru.nl/)
 
 I used Guest login, Coq prover, settings: display:Gentzen style and template:Theorem template
 
-### Rule of inference
+### Rules of inference
 > In formal logic (and many related areas), rules of inference are usually given in the following standard form: [Wikipedia](https://en.wikipedia.org/wiki/Rule_of_inference)
 > ```
 >premise 1
