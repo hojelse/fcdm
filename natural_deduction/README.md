@@ -237,7 +237,7 @@ Prove By Contradiction ``PBC[u]``
  A true
 ```
 
-#### Quantifiers
+#### Quantifiers ``∀`` ``∃``
 
 Universal Introduction ``∀I[a]``
 
