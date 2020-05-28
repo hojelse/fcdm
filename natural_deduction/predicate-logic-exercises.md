@@ -1,4 +1,5 @@
 # Excercise answers from notes-logics.pdf
+Excercise answers from notes-logics.pdf
 
 ## Excercise 6
 ### 6.1.
