@@ -1,9 +1,21 @@
-# Natural deduction in propositional logic
+# Natural deduction
 
 Assignments and answers
 
 ### Natural deduction
 > In logic and proof theory, natural deduction is a kind of proof calculus in which logical reasoning is expressed by inference rules closely related to the "natural" way of reasoning. This contrasts with Hilbert-style systems, which instead use axioms as much as possible to express the logical laws of deductive reasoning. [Wikipedia](https://en.wikipedia.org/wiki/Natural_deduction)
+
+### Propositional logic
+
+*Proposition* a statement proposing an idea that can be true or false.
+
+Logic with letters (e.g. A, B, C) as abstract placeholders for concrete propositions (e.g. "it's snowing", "a dog is an animal", "the moon is made of cheese")
+
+### Predicate logic
+
+*Predicate* in traditional grammar is the verb part of a sentence. In "Socrates is mortal", Socrates is the subject, and is mortal is the predicate, which modifies the description of the subject.
+
+In formal logic predicates are functions taking a variables (e.g. isEven(x), isMortal(Socrates)) 
 
 ### Proofweb
 
@@ -59,3 +71,10 @@ _____________________________________ →E
 ```
 
 See the full list of inference rules in the document [Rules of Natural Deduction in Predicate Logic.png](https://github.com/hojelse/fcdm/blob/master/natural_deduction/README.md)
+
+### Intuistic rules
+
+
+### Classical rules
+
+A superset of Intuistic rules where Quantifiers are allowed
