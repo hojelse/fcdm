@@ -7,9 +7,9 @@
 - [Intuitionistic rules](#intuitionistic-rules)
   * [Conjunction rules ``∧``](#conjunction-rules------)
   * [Implication rules ``→``](#implication-rules------)
-  * [Disjunction ``∨``](#disjunction------)
-  * [True and false ``T`` ``F``](#true-and-false---t-----f--)
-  * [Negation ``¬``](#negation------)
+  * [Disjunction rules ``∨``](#disjunction------)
+  * [True and false rules ``T`` ``F``](#true-and-false---t-----f--)
+  * [Negation rules ``¬``](#negation------)
 - [Classical rules](#classical-rules)
   * [Classical rules](#classical-rules-1)
   * [Quantifiers](#quantifiers)
@@ -145,7 +145,7 @@ A → B true    A true
        B true
 ```
 
-#### Disjunction ``∨``
+#### Disjunction rules ``∨``
 
 Disjunction Introduction Left ``∨I1``
 ```
@@ -171,7 +171,7 @@ A ∨ B true  C true    C true
            C true
 ```
 
-#### True and false ``T`` ``F``
+#### True and false rules ``T`` ``F``
 
 True Introduction (Unit) ``TI``
 
@@ -188,7 +188,7 @@ False Elimination ``FE`` or ``⊥E``
 C true
 ```
 
-#### Negation ``¬``
+#### Negation rules ``¬``
 
 Negation Introduction ``¬I[u]``
 ```
