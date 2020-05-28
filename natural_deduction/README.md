@@ -1,5 +1,9 @@
 # Natural deduction in predicate logic
 
+Assignments and answers
+
+Tool for double checking proofs [proofweb](http://proofweb.cs.ru.nl/)
+
 ### Natural deduction
 > In logic and proof theory, natural deduction is a kind of proof calculus in which logical reasoning is expressed by inference rules closely related to the "natural" way of reasoning. This contrasts with Hilbert-style systems, which instead use axioms as much as possible to express the logical laws of deductive reasoning. [Wikipedia](https://en.wikipedia.org/wiki/Natural_deduction)
 
