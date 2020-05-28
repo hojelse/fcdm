@@ -1,3 +1,10 @@
+  + [Natural deduction](#natural-deduction-1)
+  + [Propositional logic](#propositional-logic)
+  + [Predicate logic](#predicate-logic)
+  + [Proofweb](#proofweb)
+  + [Rules of inference](#rules-of-inference)
+      - [Gentzen style notation with examples](#gentzen-style-notation-with-examples)
+
 # Natural deduction
 
 Assignments and answers
