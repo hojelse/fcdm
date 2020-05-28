@@ -3,6 +3,43 @@ Excercise answers from basic-exercises.pdf
 
 ## Excercise 1
 
+### 1.8.
+(P ∨ Q) → (Q → R) → (P → R) → R
+```
+Require Import ProofWeb.
+
+Parameter P Q R : Prop.
+
+Theorem exercise_1_8 : (P \/ Q) -> (Q -> R) -> (P -> R) -> R.
+imp_i h1.
+imp_i h2.
+imp_i h3.
+dis_e (P \/ Q) h4 h5.
+exact h1.
+imp_e P.
+exact h3.
+exact h4.
+imp_e Q.
+exact h2.
+exact h5.
+Proof.
+
+Qed.
+```
+```
+          [P → R]h3 [P]h4    [Q → R]h2 [Q]h5          
+          ─────────────── →e ─────────────── →e       
+[P ∨ Q]h1        R                  R                 
+──────────────────────────────────────────── ∨e[h4,h5]
+                      R                               
+──────────────────────────────────────────── →i[h3]   
+                 (P → R) → R                          
+──────────────────────────────────────────── →i[h2]   
+            (Q → R) → (P → R) → R                     
+──────────────────────────────────────────── →i[h1]   
+        P ∨ Q → (Q → R) → (P → R) → R                 
+```
+
 ### 1.10.
 (((S ∧ R) ∨ (Q ∧ P)) ∨ ((P ∧ Q) ∨ (R ∧ S))) → ((P ∨ S) ∨ (Q ∨ R))
 ```
