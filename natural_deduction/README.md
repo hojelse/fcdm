@@ -16,11 +16,17 @@ Synonyms for proposition: premise
 
 Letters (e.g. A, B, C) are used as abstract placeholders for concrete propositions (e.g. "it's snowing", "a dog is an animal", "the moon is made of cheese")
 
+[Wikipedia: Propositional calculus](https://en.wikipedia.org/wiki/Propositional_calculus)
+
 ### Predicate logic
 
 *Predicate* in traditional grammar is the verb part of a sentence. In "Socrates is mortal", Socrates is the subject, and is mortal is the predicate, which modifies the description of the subject.
 
 In formal logic predicates are functions taking a variables (e.g. isEven(x), isMortal(Socrates)) 
+
+Predicate logic is also known as First order logic
+
+[Wikipedia: First order logic](https://en.wikipedia.org/wiki/First-order_logic)
 
 ### Proofweb
 
@@ -77,7 +83,7 @@ _____________________________________ →E
 
 See the full list of inference rules in the document [Rules of Natural Deduction in Predicate Logic.png](https://github.com/hojelse/fcdm/blob/master/natural_deduction/README.md)
 
-### Intuistic rules
+### Intuitionistic rules
 
 
 ### Classical rules
