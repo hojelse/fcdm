@@ -4,27 +4,27 @@
 - [Proofweb](#proofweb)
 - [Rules of inference](#rules-of-inference)
   * [Gentzen style notation with examples](#gentzen-style-notation-with-examples)
-- [Intuitionistic rules](#intuitionistic-rules)
-  * [Conjunction rules ``∧``](#conjunction-rules------)
-  * [Implication rules ``→``](#implication-rules------)
-  * [Disjunction rules ``∨``](#disjunction------)
-  * [True and false rules ``T`` ``F``](#true-and-false---t-----f--)
-  * [Negation rules ``¬``](#negation------)
-- [Classical rules](#classical-rules)
-  * [Classical rules](#classical-rules-1)
-  * [Quantifiers](#quantifiers)
+  * [Intuitionistic rules](#intuitionistic-rules)
+    + [Conjunction rules ``∧``](#conjunction-rules------)
+    + [Implication rules ``→``](#implication-rules------)
+    + [Disjunction rules ``∨``](#disjunction-rules------)
+    + [True and false rules ``T`` ``F``](#true-and-false-rules---t-----f--)
+    + [Negation rules ``¬``](#negation-rules------)
+  * [Classical rules](#classical-rules)
+    + [Classical rules](#classical-rules-1)
+    + [Quantifiers ``∀`` ``∃``](#quantifiers------------)
 
 # Natural deduction
 
 Assignments and answers
 
-### Natural deduction
+## Natural deduction
 
 Synonyms for deduct: infer, derive
 
 > In logic and proof theory, natural deduction is a kind of proof calculus in which logical reasoning is expressed by inference rules closely related to the "natural" way of reasoning. This contrasts with Hilbert-style systems, which instead use axioms as much as possible to express the logical laws of deductive reasoning. [Wikipedia](https://en.wikipedia.org/wiki/Natural_deduction)
 
-### Propositional logic
+## Propositional logic
 
 *Proposition* a statement proposing an idea that can be true or false.
 
@@ -34,7 +34,7 @@ Letters (e.g. A, B, C) are used as abstract placeholders for concrete propositio
 
 [Wikipedia: Propositional calculus](https://en.wikipedia.org/wiki/Propositional_calculus)
 
-### Predicate logic
+## Predicate logic
 
 *Predicate* in traditional grammar is the verb part of a sentence. In "Socrates is mortal", Socrates is the subject, and is mortal is the predicate, which modifies the description of the subject.
 
@@ -44,13 +44,13 @@ Predicate logic is also known as First order logic
 
 [Wikipedia: First order logic](https://en.wikipedia.org/wiki/First-order_logic)
 
-### Proofweb
+## Proofweb
 
 Tool for double checking proofs [proofweb](http://proofweb.cs.ru.nl/)
 
 I used Guest login, Coq prover, settings: display:Gentzen style and template:Theorem template
 
-### Rules of inference
+## Rules of inference
 > In formal logic (and many related areas), rules of inference are usually given in the following standard form:
 > ```
 >premise 1
@@ -62,7 +62,7 @@ I used Guest login, Coq prover, settings: display:Gentzen style and template:The
 >```
 >[Wikipedia](https://en.wikipedia.org/wiki/Rule_of_inference)
 
-#### Gentzen style notation with examples
+### Gentzen style notation with examples
 The Gentzen style (horizontal tree-like notation) is used in this folder
 
 ```
