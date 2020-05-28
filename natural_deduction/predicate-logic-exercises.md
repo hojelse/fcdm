@@ -1,4 +1,4 @@
-# Excercise answers from notes-logics.pdf
+# Predicate logic exercises
 Excercise answers from notes-logics.pdf
 
 ## Excercise 6
