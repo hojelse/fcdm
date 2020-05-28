@@ -454,15 +454,15 @@ Qed.
 ──────────────────── →i[h1]
  ¬∃x, P x → ∀x, ¬P x
 ```
-### 8.4.
-∃x(P(x) ∨ Q(x)) ≡ ∃x(P(x)) ∨ ∃x(Q(x))
+### 8.3.
+∀x(P(x) ∧ Q(x)) ≡ ∀x(P(x)) ∧ ∀x(Q(x))
 ```
 Require Import ProofWeb.
 
 Parameter P Q : D -> Prop.
 Parameter t: D.
 
-Theorem exercise_8_4: all x, (P x /\ Q x) <-> (all x, P x /\ all x, Q x).
+Theorem exercise_8_3: all x, (P x /\ Q x) <-> (all x, P x /\ all x, Q x).
 Proof.
 iff_i h1 h2.
 con_i.
@@ -497,13 +497,17 @@ Qed.
 ─────────────────────────────────────────────────────────────────────────────────────────────── ifi[h1,h2]
                               ∀x, (P x ∧ Q x) ↔ ∀x, P x ∧ ∀x, Q x                                         
 ```
+### 8.4.
+∃x(P(x) ∨ Q(x)) ≡ ∃x(P(x)) ∨ ∃x(Q(x))
+
+∃x(P(x) \/ Q x) <-> (exi x, P x \/ exi x, Q x)
 ```
 Require Import ProofWeb.
 
 Parameter P Q : D -> Prop.
 Parameter t: D.
 
-Theorem exercise_3_5: exi x, (P x \/ Q x) <-> (exi x, P x \/ exi x, Q x).
+Theorem exercise_8_4: exi x, (P x \/ Q x) <-> (exi x, P x \/ exi x, Q x).
 Proof.
 iff_i h1 h2.
 exi_e (exi x, (P x \/ Q x)) a h3.
