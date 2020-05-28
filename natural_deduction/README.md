@@ -1,19 +1,3 @@
-- [Natural deduction](#natural-deduction)
-- [Propositional logic](#propositional-logic)
-- [Predicate logic](#predicate-logic)
-- [Proofweb](#proofweb)
-- [Rules of inference](#rules-of-inference)
-  * [Gentzen style notation with examples](#gentzen-style-notation-with-examples)
-  * [Intuitionistic rules](#intuitionistic-rules)
-    + [Conjunction rules ``∧``](#conjunction-rules------)
-    + [Implication rules ``→``](#implication-rules------)
-    + [Disjunction rules ``∨``](#disjunction-rules------)
-    + [True and false rules ``T`` ``F``](#true-and-false-rules---t-----f--)
-    + [Negation rules ``¬``](#negation-rules------)
-  * [Classical rules](#classical-rules)
-    + [Classical rules](#classical-rules-1)
-    + [Quantifiers ``∀`` ``∃``](#quantifiers------------)
-
 # Natural deduction
 
 Assignments and answers
@@ -51,6 +35,17 @@ Tool for double checking proofs [proofweb](http://proofweb.cs.ru.nl/)
 I used Guest login, Coq prover, settings: display:Gentzen style and template:Theorem template
 
 ## Rules of inference
+  * [Gentzen style notation with examples](#gentzen-style-notation-with-examples)
+  * [Intuitionistic rules](#intuitionistic-rules)
+    + [Conjunction rules ``∧``](#conjunction-rules------)
+    + [Implication rules ``→``](#implication-rules------)
+    + [Disjunction rules ``∨``](#disjunction-rules------)
+    + [True and false rules ``T`` ``F``](#true-and-false-rules---t-----f--)
+    + [Negation rules ``¬``](#negation-rules------)
+  * [Classical rules](#classical-rules)
+    + [Classical rules](#classical-rules-1)
+    + [Quantifiers ``∀`` ``∃``](#quantifiers------------)
+
 > In formal logic (and many related areas), rules of inference are usually given in the following standard form:
 > ```
 >premise 1
