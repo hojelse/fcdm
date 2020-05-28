@@ -12,7 +12,7 @@ Tool for double checking proofs [proofweb](http://proofweb.cs.ru.nl/)
 I used Guest login, Coq prover, settings: display:Gentzen style and template:Theorem template
 
 ### Rules of inference
-> In formal logic (and many related areas), rules of inference are usually given in the following standard form: [Wikipedia](https://en.wikipedia.org/wiki/Rule_of_inference)
+> In formal logic (and many related areas), rules of inference are usually given in the following standard form:
 > ```
 >premise 1
 >premise 2
@@ -21,7 +21,7 @@ I used Guest login, Coq prover, settings: display:Gentzen style and template:The
 >_________
 >conclusion
 >```
->
+>[Wikipedia](https://en.wikipedia.org/wiki/Rule_of_inference)
 
 #### Gentzen style notation with examples
 The Gentzen style (horizontal tree-like notation) is used in this folder
