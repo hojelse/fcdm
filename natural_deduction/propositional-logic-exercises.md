@@ -45,6 +45,22 @@ Qed.
 ### 1.2.
 (P ∧ (Q ∧ S)) → ((P ∧ Q) ∧ S)
 ```
+                  [P ∧ Q ∧ S]h1                         
+                  ───────────── ∧e₂                     
+[P ∧ Q ∧ S]h1         Q ∧ S         [P ∧ Q ∧ S]h1       
+───────────── ∧e₁ ───────────── ∧e₁ ───────────── ∧e₂   
+      P                 Q               Q ∧ S           
+─────────────────────────────── ∧i  ───────────── ∧e₂   
+             P ∧ Q                        S             
+───────────────────────────────────────────────── ∧i    
+                   (P ∧ Q) ∧ S                          
+───────────────────────────────────────────────── →i[h1]
+             P ∧ Q ∧ S → (P ∧ Q) ∧ S                    
+```
+<details>
+  <summary>Proofweb</summary>
+
+```
 Require Import ProofWeb.
 
 Parameter P Q S : Prop.
@@ -65,23 +81,16 @@ exact h1.
 Proof.
 
 Qed.
-```
-```
-                  [P ∧ Q ∧ S]h1                         
-                  ───────────── ∧e₂                     
-[P ∧ Q ∧ S]h1         Q ∧ S         [P ∧ Q ∧ S]h1       
-───────────── ∧e₁ ───────────── ∧e₁ ───────────── ∧e₂   
-      P                 Q               Q ∧ S           
-─────────────────────────────── ∧i  ───────────── ∧e₂   
-             P ∧ Q                        S             
-───────────────────────────────────────────────── ∧i    
-                   (P ∧ Q) ∧ S                          
-───────────────────────────────────────────────── →i[h1]
-             P ∧ Q ∧ S → (P ∧ Q) ∧ S                    
-```
+``` 
+</details>
 
 ### 1.3.
 (P → (P → Q)) → P → Q
+<details>
+  <summary>Proofweb</summary>
+
+
+</details>
 ```
 Require Import ProofWeb.
 
@@ -114,6 +123,11 @@ Qed.
 
 ### 1.4.
 (P ∧ Q) → Q
+<details>
+  <summary>Proofweb</summary>
+
+
+</details>
 ```
 Require Import ProofWeb.
 
@@ -138,6 +152,11 @@ P ∧ Q → Q
 
 ### 1.5.
 P → Q → P
+<details>
+  <summary>Proofweb</summary>
+
+
+</details>
 ```
 Require Import ProofWeb.
 
@@ -161,6 +180,11 @@ P → Q → P
 ```
 
 ### 1.6.
+<details>
+  <summary>Proofweb</summary>
+
+
+</details>
 (P ∧ Q) ∨ (Q ∧ R) → Q
 ```
 Require Import ProofWeb.
@@ -191,6 +215,11 @@ Qed.
 ```
 
 ### 1.7.
+<details>
+  <summary>Proofweb</summary>
+
+
+</details>
 (P → Q) → (R → S) → (P ∧ R) → (Q ∧ S)
 ```
 Require Import ProofWeb.
@@ -231,6 +260,11 @@ Qed.
 ```
 
 ### 1.8.
+<details>
+  <summary>Proofweb</summary>
+
+
+</details>
 (P ∨ Q) → (Q → R) → (P → R) → R
 ```
 Require Import ProofWeb.
@@ -268,7 +302,12 @@ Qed.
 ```
 
 ### 1.9.
+P → (Q → (P ∨ R)) 
+<details>
+  <summary>Proofweb</summary>
 
+
+</details>
 ```
 Require Import ProofWeb.
 
@@ -302,6 +341,11 @@ Q → P        [Q]h2
 
 ### 1.10.
 (((S ∧ R) ∨ (Q ∧ P)) ∨ ((P ∧ Q) ∨ (R ∧ S))) → ((P ∨ S) ∨ (Q ∨ R))
+<details>
+  <summary>Proofweb</summary>
+
+
+</details>
 ```
 Require Import ProofWeb.
 
@@ -357,7 +401,11 @@ Qed.
 
 ### 2.1.
 (¬P → P) → P
+<details>
+  <summary>Proofweb</summary>
 
+
+</details>
 ```
 Require Import ProofWeb.
 
@@ -388,6 +436,11 @@ P ∨ ¬P     [P]h2         P
 
 ### 2.2.
 (P ∨ Q) → ¬Q → P
+<details>
+  <summary>Proofweb</summary>
+
+
+</details>
 ```
 Require Import ProofWeb.
 
@@ -421,6 +474,11 @@ Qed.
 
 ### 2.3.
 (P → Q) → (R → S) → (P ∨ R) → (Q ∨ S)
+<details>
+  <summary>Proofweb</summary>
+
+
+</details>
 ```
 Require Import ProofWeb.
 
@@ -463,6 +521,11 @@ Qed.
 
 ### 2.4.
 Q → ((P ∧ Q) ∨ (¬P ∧ Q))
+<details>
+  <summary>Proofweb</summary>
+
+
+</details>
 ```
 Require Import ProofWeb.
 
@@ -499,6 +562,11 @@ P ∨ ¬P     P ∧ Q ∨ ¬P ∧ Q     P ∧ Q ∨ ¬P ∧ Q
 
 ### 2.5.
 (P → Q) → (¬P ∨ Q)
+<details>
+  <summary>Proofweb</summary>
+
+
+</details>
 ```
 Require Import ProofWeb.
 
@@ -533,6 +601,11 @@ P ∨ ¬P          ¬P ∨ Q         ¬P ∨ Q
 
 ### 2.6.
 (¬P ∨ Q) → P → Q
+<details>
+  <summary>Proofweb</summary>
+
+
+</details>
 ```
 Require Import ProofWeb.
 
@@ -566,6 +639,11 @@ Qed.
 
 ### 2.7.
 (P → Q) → (P → ¬Q) → ¬P
+<details>
+  <summary>Proofweb</summary>
+
+
+</details>
 ```
 Require Import ProofWeb.
 
@@ -603,6 +681,11 @@ Qed.
 
 ### 2.8.
 (P → ¬P) → ¬P
+<details>
+  <summary>Proofweb</summary>
+
+
+</details>
 ```
 Require Import ProofWeb.
 
@@ -635,6 +718,11 @@ Qed.
 
 ### 2.9.
 (P ∧ (Q ∨ R)) → ((P ∧ Q) ∨ (P ∧ R))
+<details>
+  <summary>Proofweb</summary>
+
+
+</details>
 ```
 Require Import ProofWeb.
 
@@ -676,6 +764,11 @@ Qed.
 
 ### 2.10.
 (P → (Q → R)) → P → (¬R) → ¬Q
+<details>
+  <summary>Proofweb</summary>
+
+
+</details>
 ```
 Require Import ProofWeb.
 
@@ -718,6 +811,11 @@ Qed.
 
 ### 2.11.
 (P → Q) → (¬P → R) → (Q ∨ R)
+<details>
+  <summary>Proofweb</summary>
+
+
+</details>
 ```
 Require Import ProofWeb.
 
@@ -757,6 +855,11 @@ P ∨ ¬P          Q ∨ R                Q ∨ R
 
 ### 2.12.
 (P → Q) → (R → ¬T) → (Q → R) → (P → ¬T)
+<details>
+  <summary>Proofweb</summary>
+
+
+</details>
 ```
 Require Import ProofWeb.
 
@@ -800,6 +903,26 @@ Qed.
 ### 2.13.
 ((P ∧ ¬Q) → R) → (¬R) → P → Q
 ```
+                      [P]h3 [¬Q]h4        
+                      ──────────── ∧i     
+       [P ∧ ¬Q → R]h1    P ∧ ¬Q           
+       ─────────────────────────── →e     
+[¬R]h2              R                     
+────────────────────────────────── ¬e     
+                ⊥                       
+────────────────────────────────── PBC[h4]
+                 Q                        
+────────────────────────────────── →i[h3] 
+               P → Q                      
+────────────────────────────────── →i[h2] 
+            ¬R → P → Q                    
+────────────────────────────────── →i[h1] 
+     (P ∧ ¬Q → R) → ¬R → P → Q            
+```
+<details>
+  <summary>Proofweb</summary>
+
+```
 Require Import ProofWeb.
 
 Parameter P Q R : Prop.
@@ -821,20 +944,4 @@ Proof.
 
 Qed.
 ```
-```
-                      [P]h3 [¬Q]h4        
-                      ──────────── ∧i     
-       [P ∧ ¬Q → R]h1    P ∧ ¬Q           
-       ─────────────────────────── →e     
-[¬R]h2              R                     
-────────────────────────────────── ¬e     
-                ⊥                       
-────────────────────────────────── PBC[h4]
-                 Q                        
-────────────────────────────────── →i[h3] 
-               P → Q                      
-────────────────────────────────── →i[h2] 
-            ¬R → P → Q                    
-────────────────────────────────── →i[h1] 
-     (P ∧ ¬Q → R) → ¬R → P → Q            
-```
+</details>
