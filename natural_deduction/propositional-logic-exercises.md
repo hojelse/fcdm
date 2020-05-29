@@ -3,6 +3,203 @@ Excercise answers from basic-exercises.pdf
 
 ## Excercise 1
 
+### 1.1.
+((P ∧ Q) ∧ R) → (S ∧ T) → (Q ∧ S)
+```
+
+```
+```
+
+```
+
+### 1.2.
+(P ∧ (Q ∧ S)) → ((P ∧ Q) ∧ S)
+```
+Require Import ProofWeb.
+
+Parameter P Q S : Prop.
+
+Theorem exercise_1_2 : (P /\ (Q /\ S)) -> ((P /\ Q) /\ S).
+imp_i h1.
+con_i.
+con_i.
+con_e1 (Q /\ S).
+exact h1.
+con_e1 S.
+con_e2 P.
+exact h1.
+con_e2 Q.
+con_e2 P.
+exact h1.
+
+Proof.
+
+Qed.
+```
+```
+                  [P ∧ Q ∧ S]h1                         
+                  ───────────── ∧e₂                     
+[P ∧ Q ∧ S]h1         Q ∧ S         [P ∧ Q ∧ S]h1       
+───────────── ∧e₁ ───────────── ∧e₁ ───────────── ∧e₂   
+      P                 Q               Q ∧ S           
+─────────────────────────────── ∧i  ───────────── ∧e₂   
+             P ∧ Q                        S             
+───────────────────────────────────────────────── ∧i    
+                   (P ∧ Q) ∧ S                          
+───────────────────────────────────────────────── →i[h1]
+             P ∧ Q ∧ S → (P ∧ Q) ∧ S                    
+```
+
+### 1.3.
+(P → (P → Q)) → P → Q
+```
+Require Import ProofWeb.
+
+Parameter P Q : Prop.
+
+Theorem exercise_1_3 : (P -> (P -> Q)) -> P -> Q.
+imp_i h1.
+imp_i h2.
+imp_e P.
+imp_e P.
+exact h1.
+exact h2.
+exact h2.
+
+Proof.
+
+Qed.
+```
+```
+[P → P → Q]h1 [P]h2                
+─────────────────── →e             
+       P → Q           [P]h2       
+──────────────────────────── →e    
+              Q                    
+──────────────────────────── →i[h2]
+            P → Q                  
+──────────────────────────── →i[h1]
+     (P → P → Q) → P → Q           
+```
+
+### 1.4.
+(P ∧ Q) → Q
+```
+Require Import ProofWeb.
+
+Parameter P Q : Prop.
+
+Theorem exercise_1_4 : (P /\ Q) -> Q.
+imp_i h1.
+con_e2 P.
+exact h1.
+
+Proof.
+
+Qed.
+```
+```
+[P ∧ Q]h1       
+───────── ∧e₂   
+    Q           
+───────── →i[h1]
+P ∧ Q → Q       
+```
+
+### 1.5.
+P → Q → P
+```
+Require Import ProofWeb.
+
+Parameter P Q : Prop.
+
+Theorem exercise_1_5 : P -> Q -> P.
+imp_i h1.
+imp_i h2.
+exact h1.
+
+Proof.
+
+Qed.
+```
+```
+  [P]h1         
+  ───── →i[h2]  
+  Q → P         
+───────── →i[h1]
+P → Q → P       
+```
+
+### 1.6.
+(P ∧ Q) ∨ (Q ∧ R) → Q
+```
+Require Import ProofWeb.
+
+Parameter P Q R : Prop.
+
+Theorem exercise_1_6 : (P /\ Q) \/ (Q /\ R) -> Q.
+imp_i h1.
+dis_e (P /\ Q \/ Q /\ R) h2 h3.
+exact h1.
+con_e2 P.
+exact h2.
+con_e1 R.
+exact h3.
+
+Proof.
+
+Qed.
+```
+```
+                  [P ∧ Q]h2     [Q ∧ R]h3          
+                  ───────── ∧e₂ ───────── ∧e₁      
+[P ∧ Q ∨ Q ∧ R]h1     Q             Q              
+───────────────────────────────────────── ∨e[h2,h3]
+                    Q                              
+───────────────────────────────────────── →i[h1]   
+            P ∧ Q ∨ Q ∧ R → Q                      
+```
+
+### 1.7.
+(P → Q) → (R → S) → (P ∧ R) → (Q ∧ S)
+```
+Require Import ProofWeb.
+
+Parameter P Q R S : Prop.
+
+Theorem exercise_1_7 : (P -> Q) -> (R -> S) -> (P /\ R) -> (Q /\ S).
+imp_i h1.
+imp_i h2.
+imp_i h3.
+con_i.
+imp_e P.
+exact h1.
+con_e1 R.
+exact h3.
+imp_e R.
+exact h2.
+con_e2 P.
+exact h3.
+Proof.
+
+Qed.
+```
+```
+          [P ∧ R]h3               [P ∧ R]h3       
+          ───────── ∧e₁           ───────── ∧e₂   
+[P → Q]h1     P         [R → S]h2     R           
+─────────────────── →e  ─────────────────── →e    
+         Q                       S                
+─────────────────────────────────────────── ∧i    
+                   Q ∧ S                          
+─────────────────────────────────────────── →i[h3]
+               P ∧ R → Q ∧ S                      
+─────────────────────────────────────────── →i[h2]
+          (R → S) → P ∧ R → Q ∧ S                 
+─────────────────────────────────────────── →i[h1]
+     (P → Q) → (R → S) → P ∧ R → Q ∧ S            
+```
+
 ### 1.8.
 (P ∨ Q) → (Q → R) → (P → R) → R
 ```
@@ -38,6 +235,39 @@ Qed.
             (Q → R) → (P → R) → R                     
 ──────────────────────────────────────────── →i[h1]   
         P ∨ Q → (Q → R) → (P → R) → R                 
+```
+
+### 1.9.
+
+```
+Require Import ProofWeb.
+
+Parameter P Q R : Prop.
+
+Theorem exercise_1_9 : P -> (Q -> (P \/ R)).
+imp_i h1.
+imp_i h2.
+dis_i1.
+imp_e Q.
+imp_i h3.
+exact h1.
+exact h2.
+Proof.
+
+Qed.
+```
+```
+[P]h1                    
+───── →i[h3]             
+Q → P        [Q]h2       
+────────────────── →e    
+         P               
+────────────────── ∨i₁   
+       P ∨ R             
+────────────────── →i[h2]
+     Q → P ∨ R           
+────────────────── →i[h1]
+   P → Q → P ∨ R         
 ```
 
 ### 1.10.
