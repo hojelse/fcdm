@@ -6,10 +6,36 @@ Excercise answers from basic-exercises.pdf
 ### 1.1.
 ((P ∧ Q) ∧ R) → (S ∧ T) → (Q ∧ S)
 ```
+Require Import ProofWeb.
 
+Parameter P Q R S T : Prop.
+
+Theorem exercise_1_1 : ((P /\ Q) /\ R) -> (S /\ T) -> (Q /\ S).
+imp_i h1.
+imp_i h2.
+con_i.
+con_e2 P.
+con_e1 R.
+exact h1.
+con_e1 T.
+exact h2.
+
+Proof.
+
+Qed.
 ```
 ```
-
+[(P ∧ Q) ∧ R]h1                     
+─────────────── ∧e₁                 
+     P ∧ Q          [S ∧ T]h2       
+─────────────── ∧e₂ ───────── ∧e₁   
+       Q                S           
+───────────────────────────── ∧i    
+            Q ∧ S                   
+───────────────────────────── →i[h2]
+        S ∧ T → Q ∧ S               
+───────────────────────────── →i[h1]
+ (P ∧ Q) ∧ R → S ∧ T → Q ∧ S        
 ```
 
 ### 1.2.
