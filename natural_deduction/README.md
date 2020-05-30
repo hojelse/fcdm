@@ -2,21 +2,21 @@
 
 Assignments and answers
 
-* [Natural deduction](#natural-deduction-1)
-* [Propositional logic](#propositional-logic)
-* [Predicate logic](#predicate-logic)
-* [Proofweb](#proofweb)
-* [Rules of inference](#rules-of-inference)
-  + [Gentzen style notation with examples](#gentzen-style-notation-with-examples)
-  + [Intuitionistic rules](#intuitionistic-rules)
-    - [Conjunction rules ``∧``](#conjunction-rules)
-    - [Implication rules ``→``](#implication-rules)
-    - [Disjunction rules ``∨``](#disjunction-rules)
-    - [True and false rules ``T`` ``F``](#true-and-false-rules)
-    - [Negation rules ``¬``](#negation-rules)
-  + [Classical rules](#classical-rules)
-    - [Classical rules](#classical-rules-1)
-    - [Quantifiers ``∀`` ``∃``](#quantifiers)
+- [Natural deduction](#natural-deduction)
+- [Propositional logic](#propositional-logic)
+- [Predicate logic](#predicate-logic)
+- [Proofweb](#proofweb)
+- [Rules of inference](#rules-of-inference)
+  * [Gentzen style notation with examples](#gentzen-style-notation-with-examples)
+  * [Intuitionistic rules](#intuitionistic-rules)
+    + [Conjunction rules](#conjunction-rules)
+    + [Implication rules](#implication-rules)
+    + [Disjunction rules](#disjunction-rules)
+    + [True and false rules](#true-and-false-rules)
+    + [Negation rules](#negation-rules)
+  * [Classical rules](#classical-rules)
+    + [Classical rules](#classical-rules-1)
+    + [Quantifiers](#quantifiers)
 
 ## Natural deduction
 
@@ -126,7 +126,7 @@ A ∧ B true
   B true
 ```
 
-#### Implication rules ``→``
+#### Implication rules
 
 Implication Introduction ``→I[u]``
 ```
