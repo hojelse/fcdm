@@ -9,14 +9,14 @@ Assignments and answers
 * [Rules of inference](#rules-of-inference)
   + [Gentzen style notation with examples](#gentzen-style-notation-with-examples)
   + [Intuitionistic rules](#intuitionistic-rules)
-    - [Conjunction rules ``∧``](#conjunction-rules------)
-    - [Implication rules ``→``](#implication-rules------)
-    - [Disjunction rules ``∨``](#disjunction-rules------)
-    - [True and false rules ``T`` ``F``](#true-and-false-rules---t-----f--)
-    - [Negation rules ``¬``](#negation-rules------)
+    - [Conjunction rules ``∧``](#conjunction-rules)
+    - [Implication rules ``→``](#implication-rules)
+    - [Disjunction rules ``∨``](#disjunction-rules)
+    - [True and false rules ``T`` ``F``](#true-and-false-rules)
+    - [Negation rules ``¬``](#negation-rules)
   + [Classical rules](#classical-rules)
     - [Classical rules](#classical-rules-1)
-    - [Quantifiers ``∀`` ``∃``](#quantifiers------------)
+    - [Quantifiers ``∀`` ``∃``](#quantifiers)
 
 ## Natural deduction
 
@@ -103,7 +103,7 @@ See the full list of inference rules in the section below or in the document [Ru
 
 [Wikipedia: Intuitionistic logic](https://en.wikipedia.org/wiki/Intuitionistic_logic)
 
-#### Conjunction rules ``∧``
+#### Conjunction rules
 
 Conjunction Introduction ``∧I``
 ```
@@ -145,7 +145,7 @@ A → B true    A true
        B true
 ```
 
-#### Disjunction rules ``∨``
+#### Disjunction rules
 
 Disjunction Introduction Left ``∨I1``
 ```
@@ -171,7 +171,7 @@ A ∨ B true  C true    C true
            C true
 ```
 
-#### True and false rules ``T`` ``F``
+#### True and false rules
 
 True Introduction (Unit) ``TI``
 
@@ -188,7 +188,7 @@ False Elimination ``FE`` or ``⊥E``
 C true
 ```
 
-#### Negation rules ``¬``
+#### Negation rules
 
 Negation Introduction ``¬I[u]``
 ```
@@ -237,7 +237,7 @@ Prove By Contradiction ``PBC[u]``
  A true
 ```
 
-#### Quantifiers ``∀`` ``∃``
+#### Quantifiers
 
 Universal Introduction ``∀I[a]``
 
