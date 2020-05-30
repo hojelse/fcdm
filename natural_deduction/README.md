@@ -200,7 +200,7 @@ Negation Introduction ``¬I[u]``
 ¬A true
 ```
 
-Law of Excluded Middel or Negation Elimination ``¬E``
+Negation Elimination ``¬E``
 ```
 ¬A true    A true
 ───────────────── ¬E
