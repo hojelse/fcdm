@@ -9,14 +9,14 @@ Assignments and answers
 - [Rules of inference](#rules-of-inference)
   * [Gentzen style notation with examples](#gentzen-style-notation-with-examples)
   * [Intuitionistic rules](#intuitionistic-rules)
-    + [Conjunction rules](#conjunction-rules)
-    + [Implication rules](#implication-rules)
-    + [Disjunction rules](#disjunction-rules)
-    + [True and false rules](#true-and-false-rules)
-    + [Negation rules](#negation-rules)
+    + [Conjunction rules ``∧``](#conjunction-rules)
+    + [Implication rules ``→``](#implication-rules)
+    + [Disjunction rules ``∨``](#disjunction-rules)
+    + [True and false rules ``T`` ``⊥``](#true-and-false-rules)
+    + [Negation rules ``¬``](#negation-rules)
   * [Classical rules](#classical-rules)
-    + [Classical rules](#classical-rules-1)
-    + [Quantifiers](#quantifiers)
+    + [Classical rules ``LEM`` ``¬¬C`` ``PBC[u]``](#classical-rules-1)
+    + [Quantifiers ``∀`` ``∃``](#quantifiers)
 
 ## Natural deduction
 
