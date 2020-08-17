@@ -103,7 +103,7 @@ Its snowing    Its snowing → Its cold
 
 
 
-See the full list of inference rules in the section below or in the document [Rules of Natural Deduction in Predicate Logic.png](https://github.com/hojelse/fcdm/blob/master/natural_deduction/README.md)
+See the full list of inference rules in the section below or in the document [Rules of Natural Deduction in Predicate Logic.png](https://github.com/hojelse/fcdm/blob/master/natural_deduction/Rules%20of%20Natural%20Deduction%20in%20Predicate%20Logic.png)
 
 ### Intuitionistic rules
 
