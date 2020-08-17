@@ -269,7 +269,7 @@ A[t/x] true
 ∃x(A) true
 ```
 
-Universal Elimination ``∃E[a,u]``
+Existential Elimination ``∃E[a,u]``
 
 ```
               ─────────── u
