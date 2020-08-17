@@ -63,7 +63,7 @@ I used Guest login, Coq prover, settings: display:Gentzen style and template:The
 >[Wikipedia](https://en.wikipedia.org/wiki/Rule_of_inference)
 
 ### Gentzen style notation with examples
-The Gentzen style (horizontal tree-like notation) is used in this folder
+The Gentzen style (horizontal tree-like notation) is used in this repository
 
 ```
 premise 1    premise 2   ...   premise n
