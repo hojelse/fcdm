@@ -93,7 +93,7 @@ a       a → b
 
 With some context applied, the following reads:
 
-We assume that its snowing. We also assume that when its snowing its cold. Therefore we can conclude that its cold.
+We assume that, its snowing. We also assume that, when its snowing its cold. By applying the rule of modus ponens, we can conclude, that its cold.
 
 ```
 Its snowing    Its snowing → Its cold
