@@ -91,11 +91,17 @@ a       a → b
       b
 ```
 
+With some context applied, the following reads:
+
+We assume that its snowing. We also assume that when its snowing its cold. Therefore we can conclude that its cold.
+
 ```
 Its snowing    Its snowing → Its cold
 ───────────────────────────────────── →E
               Its cold
 ```
+
+
 
 See the full list of inference rules in the section below or in the document [Rules of Natural Deduction in Predicate Logic.png](https://github.com/hojelse/fcdm/blob/master/natural_deduction/README.md)
 
