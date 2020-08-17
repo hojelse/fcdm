@@ -79,7 +79,7 @@ premise 1            conclusion 1
              conclusion 2
 ```
 
-The inference (synonyms: deduction, derivation) below shows the use of the specific rule *Implication Elimination* (also called modus ponens)
+The inference (synonyms: deduction, derivation) below shows the use of the specific inference rule *Implication Elimination* (also called modus ponens)
 
 *Implication Elimination* is labelled →E, and is placed to the right of the horizontal line
 
