@@ -40,7 +40,7 @@ Letters (e.g. A, B, C) are used as abstract placeholders for concrete propositio
 
 *Predicate* in traditional grammar is the verb part of a sentence. In "Socrates is mortal", Socrates is the subject, and is mortal is the predicate, which modifies the description of the subject.
 
-In formal logic predicates are functions taking a variables (e.g. isEven(x), isMortal(Socrates)) 
+In formal logic predicates are functions that returns a boolean (e.g. isEven(x), isMortal(Socrates)) 
 
 Predicate logic is also known as First order logic
 
