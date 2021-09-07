@@ -30,7 +30,7 @@ Synonyms for deduct: infer, derive
 
 Synonyms for proposition: premise
 
-Letters (e.g. A, B, C) are used as abstract placeholders for concrete propositions (e.g. "it's snowing", "a dog is an animal", "the moon is made of cheese")
+Letters are used as abstract placeholders (e.g. A, B, C) for concrete propositions (e.g. "it's snowing", "a dog is an animal", "the moon is made of cheese")
 
 [Wikipedia: Propositional calculus](https://en.wikipedia.org/wiki/Propositional_calculus)
 
