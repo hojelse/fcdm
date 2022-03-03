@@ -24,7 +24,7 @@ Synonyms for deduct: infer, derive
 
 > In logic and proof theory, natural deduction is a kind of proof calculus in which logical reasoning is expressed by inference rules closely related to the "natural" way of reasoning. This contrasts with Hilbert-style systems, which instead use axioms as much as possible to express the logical laws of deductive reasoning. [Wikipedia](https://en.wikipedia.org/wiki/Natural_deduction)
 
-## Propositional logic
+## Propositional logic (0th order logic)
 
 *Proposition* a statement proposing an idea that can be true or false.
 
@@ -34,7 +34,7 @@ Letters are used as abstract placeholders (e.g. A, B, C) for concrete propositio
 
 [Wikipedia: Propositional calculus](https://en.wikipedia.org/wiki/Propositional_calculus)
 
-## Predicate logic
+## Predicate logic (1st order logic)
 
 *Predicate* can be true or false.
 
